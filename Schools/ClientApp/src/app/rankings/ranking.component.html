@@ -1,0 +1,44 @@
+<div class="details">
+  <h1 id="tableLabel" class="title">Ranking</h1>
+  <br />
+
+  <p *ngIf="!rankings"><em>Loading...</em></p>
+</div>
+<table class='table table-light table-striped' aria-labelledby="tableLabel" *ngIf="rankings">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ranking of rankings">
+
+      <td>{{ ranking.studentId }}</td>
+      <td>{{ ranking.grade }}</td>
+      <td></td>
+      <td><button class="btn" (click)="deleteRanking(ranking)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+<style>
+  button {
+    color: white;
+  }
+
+  h1 {
+    color: white;
+    text-align:center;
+  }
+
+  p {
+    color: white;
+  }
+
+  button {
+    background-color: green;
+    color: white;
+  }
+</style>

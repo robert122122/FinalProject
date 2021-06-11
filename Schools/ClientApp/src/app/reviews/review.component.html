@@ -1,0 +1,47 @@
+<div class="details">
+  <h1 id="tableLabel" class="title">Reviews</h1>
+  <br />
+
+  <p *ngIf="!reviews"><em>Loading...</em></p>
+</div>
+<table class='table table-light table-striped' aria-labelledby="tableLabel" *ngIf="reviews">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Stars</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let review of reviews">
+
+      <td>{{ review.name }}</td>
+      <td>{{ review.stars }}</td>
+      <td>{{ review.message }}</td>
+      <td></td>
+      <td><button class="btn" (click)="deleteReview(review)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<button class="btn float-cemter" [routerLink]="['/review-add']">Add review</button>
+
+<style>
+  button {
+    color: white;
+  }
+
+  h1 {
+    color: white;
+    text-align:center;
+  }
+
+  p {
+    color: white;
+  }
+
+  button {
+    background-color: green;
+    color: white;
+  }
+</style>

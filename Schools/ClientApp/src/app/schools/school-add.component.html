@@ -1,0 +1,55 @@
+<style>
+  h1 {
+    color:white;
+  }
+  h3 {
+    color: white;
+  }
+  input[type=text], input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    opacity: 0.3;
+  }
+
+  input[type=submit] {
+    width: 250px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+    input[type=submit]:hover {
+      background-color: #00b33c;
+    }
+
+  input[type=text]:hover, input[type=date]:hover {
+    background-color: #F5F5F5;
+  }
+</style>
+<h1 id="tableLabel" class="title">Add School</h1>
+<br />
+<br />
+<div>
+  <form>
+    <h3><label for="name">School</label></h3>
+    <input id="name" name="name" type="text" placeholder="Name" [(ngModel)]="school.name">
+    <h3><label for="date">Address</label></h3>
+    <input id="address" name="address" type="text" placeholder="Address" [(ngModel)]="school.address">
+    <h3><label for="date">Contact Number</label></h3>
+    <input id="contactNumber" name="contactNumber" type="text" placeholder="Contact Number" [(ngModel)]="school.contactNumber">
+    <h3><label for="date">Last Average</label></h3>
+    <input id="lastAverage" name="lastAverage" type="text" placeholder="Last Average" [(ngModel)]="school.lastAverage">
+
+    <input type="submit" (click)="saveSchool()" value="Save School">
+  </form>
+</div>

@@ -1,0 +1,59 @@
+<style>
+  h1 {
+    color: white;
+  }
+
+  h3 {
+    color: white;
+  }
+
+  input[type=text], input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    opacity: 0.3;
+  }
+
+  input[type=submit] {
+    width: 250px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+    input[type=submit]:hover {
+      background-color: #00b33c;
+    }
+
+  input[type=text]:hover, input[type=date]:hover {
+    background-color: #F5F5F5;
+  }
+</style>
+<h1 id="tableLabel" class="title">Add Teacher</h1>
+<br />
+<br />
+<div>
+  <form>
+    <h3><label for="firstName">Teacher</label></h3>
+    <input id="firstName" name="firstName" type="text" placeholder="First Name" [(ngModel)]="teacher.firstName">
+    <h3><label for="lastName">Last Name</label></h3>
+    <input id="lastName" name="lastName" type="text" placeholder="Last Name" [(ngModel)]="teacher.lastName">
+    <h3><label for="course">Course</label></h3>
+    <input id="course" name="course" type="text" placeholder="Course" [(ngModel)]="teacher.course">
+    <h3><label for="schoolId">School</label></h3>
+    <input id="schoolId" name="schoolId" type="text" placeholder="SchoolId" [(ngModel)]="teacher.schoolId">
+    <h3><label for="review">Review</label></h3>
+    <input id="review" name="review" type="text" placeholder="review" [(ngModel)]="teacher.review">
+
+    <input type="submit" (click)="saveTeacher()" value="Save Teacher">
+  </form>
+</div>

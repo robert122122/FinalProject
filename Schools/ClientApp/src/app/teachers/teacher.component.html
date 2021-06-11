@@ -1,0 +1,51 @@
+<div class="details">
+  <h1 id="tableLabel" class="title">Teachers</h1>
+  <br />
+  <p>Here is the list of teachers in Iasi</p>
+
+  <p *ngIf="!teachers"><em>Loading...</em></p>
+</div>
+<table class='table table-light table-striped' aria-labelledby="tableLabel" *ngIf="teachers">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Course</th>
+      <th>School</th>
+      <th>Review</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let teacher of teachers">
+
+      <td>{{ teacher.firstName }}</td>
+      <td>{{ teacher.lastName }}</td>
+      <td>{{ teacher.course }}</td>
+      <td>{{ teacher.schoolId }}</td>
+      <td>{{ teacher.review }}</td>
+      <td></td>
+      <td><button class="btn" (click)="deleteTeacher(teacher)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<button class="btn float-center" [routerLink]="['/teacher-add']">Add teacher</button>
+
+<style>
+  button {
+    color: white;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
+
+  button {
+    background-color: green;
+    color: white;
+  }
+</style>

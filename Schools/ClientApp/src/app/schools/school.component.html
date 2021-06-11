@@ -1,0 +1,48 @@
+<div class="details">
+  <h1 id="tableLabel" class="title">Schools</h1>
+  <br />
+  <p>Here is the list of schools in Iasi</p>
+
+  <p *ngIf="!schools"><em>Loading...</em></p>
+</div>
+<table class='table table-light table-striped' aria-labelledby="tableLabel" *ngIf="schools">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>ContactNumber</th>
+      <th>LastAverage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let school of schools">
+
+      <td>{{ school.name }}</td>
+      <td>{{ school.address }}</td>
+      <td>{{ school.contactNumber }}</td>
+      <td>{{ school.lastAverage }}</td>
+      <td></td>
+      <td><button class="btn" (click)="deleteSchool(school)">Delete</button></td>
+      <td><button class="btn" (click)="joinSchool(school)">Join</button></td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<button class="btn float-cemter" [routerLink]="['/school-add']">Add school</button>
+
+<style>
+  button {
+    color: white;
+  }
+  h1 {
+    color:white;
+    text-align: center;
+  }
+  p {
+    color:white;
+  }
+  button {
+    background-color: green;
+    color: white;
+  }
+</style>
